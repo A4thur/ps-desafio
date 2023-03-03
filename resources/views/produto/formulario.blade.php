@@ -19,8 +19,7 @@
     <label class="col-sm-2 col-form-label">{{ __('Descricao do Produto') }}</label>
     <div>
         <textarea id="descricao" name="descricao" class="form-control @error('descricao') is-invalid @enderror"
-            placeholder="Escreva uma descrição curta sobre o produto"
-            required>{{ isset($produto) ? $produto->descricao : old('descricao') }}</textarea>
+            placeholder="Escreva uma descrição curta sobre o produto" required>{{ isset($produto) ? $produto->descricao : old('descricao') }}</textarea>
         @error('descricao')
             <span class="invalid-feedback" role="alert">
                 <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
@@ -35,7 +34,8 @@
 <div class="row">
     <label class="col-sm-2 col-form-label">{{ __('Preço do Produto') }}</label>
     <div>
-        <input type="text" id="preco" name="preco" value="{{ isset($produto) ? $produto->preco : old('preco') }}"
+        <input type="text" id="preco" name="preco"
+            value="{{ isset($produto) ? $produto->preco : old('preco') }}"
             class="form-control @error('preco') is-invalid @enderror" required>
         @error('preco')
             <span class="invalid-feedback" role="alert">
@@ -92,4 +92,11 @@
         <input type="file" name="imagem" class="form-control" accept="image/*"
             @if (!isset($produto)) required @endif>
     </div>
+    @if (isset($produto))
+        <div class="form-group col-md-6 col-sm-12">
+            <label for="image">Imagem Atual:</label>
+            <div><img src="/storage/{{ $produto->imagem }}" alt="image Exemplo"
+                    style="max-height: 430px; object-fit: cover;"></div>
+        </div>
+    @endif
 </div>

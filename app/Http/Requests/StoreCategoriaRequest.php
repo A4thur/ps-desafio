@@ -13,7 +13,7 @@ class StoreCategoriaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class StoreCategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'categoria' => ['required', 'min:3', 'max:100'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'categoria.required' => "Esse campo é obrigatório!",
+            'categoria.max' => "O campo deve ter no máximo 100 caractéres!",
+            'categoria.min' => "O campo categoria deve ter no mínimo 3 caractéres!"
         ];
     }
 }
