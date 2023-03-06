@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoriaRequest;
+use App\Http\Requests\UpdateCategoriaRequest;
 use Illuminate\Http\Request;
 
 
@@ -33,7 +34,7 @@ class CategoriaController extends Controller
 
     public function store(StoreCategoriaRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $this->categoria->create($data);
         return redirect()->route('categoria.index')->with('Sucesso', 'Categoria criada com sucesso');
     }
@@ -48,9 +49,9 @@ class CategoriaController extends Controller
         return view('categoria.crud', compact('categoria'));
     }
 
-    public function update(StoreCategoriaRequest $request, $id)
+    public function update(UpdateCategoriaRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $categoria = $this->categoria->find($id);
         $categoria->update($data);
         return redirect()->route('categoria.index')->with('Sucesso', 'Categoria modificada com sucesso');

@@ -7,6 +7,8 @@ use App\Models\Produto;
 use App\Http\Requests\StoreProdutoRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\UpdateProdutoRequest;
+
 
 
 class ProdutoController extends Controller
@@ -34,7 +36,7 @@ class ProdutoController extends Controller
 
     public function store(StoreProdutoRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $data['imagem'] = $request->file('imagem')->store('produtos', 'public');
         $this->produto->create($data);
         return redirect()->route('produto.index')->with('Sucesso', 'Produto adicionado  com sucesso');
@@ -56,13 +58,13 @@ class ProdutoController extends Controller
     }
 
 
-    public function update(StoreProdutoRequest $request, $id)
+    public function update(UpdateProdutoRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $produtos = $this->produto->find($id);
         if ($request->hasFile('imagem')) {
             Storage::disk('public')->delete(substr($produtos->image, 9));
-            $data['imagem'] = $request->file('imagem')->store('produtos', 'public');
+            $data['imagem'] = '/storage/' . $request->file('imagem')->store('produtos', 'public');
         }
         $produtos->update($data);
         return redirect()->route('produto.index')->with('Sucesso', 'Produto modificado com sucesso');

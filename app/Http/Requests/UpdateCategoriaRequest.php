@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
 class UpdateCategoriaRequest extends FormRequest
 {
     /**
@@ -13,7 +14,7 @@ class UpdateCategoriaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,14 @@ class UpdateCategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'categoria' => ['min:3', 'max:100'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'categoria.max' => "O campo deve ter no máximo 100 caractéres!",
+            'categoria.min' => "O campo categoria deve ter no mínimo 3 caractéres!"
         ];
     }
 }

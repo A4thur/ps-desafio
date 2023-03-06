@@ -28,7 +28,8 @@ class StoreProdutoRequest extends FormRequest
             'descricao' => ['required', 'min:3', 'max:149'],
             'preco' => ['required', 'min:0.01', 'max:100000'],
             'quantidade' => ['required', 'min:1', 'max:10000'],
-            'imagem' => 'mimes:jpg,png,jpeg'
+            'imagem' => 'mimes:jpg,png,jpeg',
+            'categoria_id' => ['required', 'integer']
         ];
     }
     public function messages()

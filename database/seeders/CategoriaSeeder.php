@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\CategoriaFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Categoria;
 
 class CategoriaSeeder extends Seeder
 {
@@ -14,6 +16,8 @@ class CategoriaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return [
+            Categoria::factory()->count(10)->create()
+        ];
     }
 }
