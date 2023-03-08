@@ -5,10 +5,10 @@
 @endsection
 
 @section('conteudo')
-    <section class="produtos-container">
+    <section class="section-container">
+        <h1>Produtos:</h1>
         <div class="produtos-container">
             <div class="tittle-produtos">
-                <h1>Produtos:</h1>
                 <form class="select" action="">
                     <div class="select-container">
                         <label for='categorias'>Filtra por categoria:</label>
@@ -19,14 +19,45 @@
                                 <option value="{{ $categoria['categoria'] }}">{{ $categoria['categoria'] }}</option>
                             @endforeach
                         </select>
-                        <input type="submit" value="Filtrar">
+                        <input id="botao-filtro" type="submit" value="Filtrar">
                     </div>
                 </form>
             </div>
-            <div class="show-produtos">
-
-
-            </div>
+        </div>
+        <div class="painel">
+            @foreach ($produtos as $produto)
+                <div class="flip cartao" onclick="flipcard(this)">
+                    <div class="face front">
+                        <div class="card">
+                            <div class="nome-produto">
+                                <p> {{ $produto['nome'] }}</p>
+                            </div>
+                            <div>
+                                <img class="imagem-produto" src="{{ $produto['imagem'] }}" />
+                            </div>
+                            <div class="preco-produto">
+                                <p>R${{ $produto['preco'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="face back">
+                        <div class="card">
+                            <div class="descricao-produto">
+                                <p> {{ $produto['descricao'] }}</p>
+                            </div>
+                            <div class="quantidade-produto">
+                                <p>{{ $produto['quantidade'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <script>
+                function flipcard(element) {
+                    element.classList.toggle("flip")
+                }
+            </script>
+        </div>
         </div>
     </section>
 @endsection

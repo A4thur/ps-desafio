@@ -24,6 +24,7 @@ use App\Http\Controllers\SiteController;
 Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
 Route::get('produtosFiltrados', [SiteController::class, 'produtobuscado'])->name('produtobusca');
 Route::get('produtosBuscados', [SiteController::class, 'produtofiltrado'])->name('produtofiltro');
+Route::get('sobrenos', [SiteController::class, 'sobrenos'])->name('sobrenos');
 
 Route::middleware('locale')->group(function () {
 

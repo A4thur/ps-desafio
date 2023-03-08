@@ -17,7 +17,7 @@ class SiteController extends Controller
     }
     public function produtofiltrado(SiteRequest $request)
     {
-        $categoriaselect = Categoria::where('categoria', $request['categoria'])->first();
+        $categoriaselect = Categoria::where('categoria_id', $request['nome'])->first();
         $produtos = [];
         if (isset($categoriaselect))
             $produtos = Produto::where('categoria_id', $categoriaselect->id)->get();
@@ -31,5 +31,9 @@ class SiteController extends Controller
         $produtos = Produto::where('nome', 'LIKE', "%{$request['search']}%")->get();
         $categorias = Categoria::all();
         return view('site.index', compact('produtos', 'categorias'));
+    }
+    public function sobrenos()
+    {
+        return view('site.sobrenos');
     }
 }
