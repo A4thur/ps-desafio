@@ -20,7 +20,7 @@
                     <a href="http://127.0.0.1:8000/siteIndex">Home</a>
                 </li>
                 <li>
-                    <a href="https://wa.me/552732581397">Contato</a>
+                    <a onclick="openPage('https://wa.me/552732581397')">Contato</a>
                 </li>
             </ul>
         </nav>
@@ -57,18 +57,20 @@
             </section>
         </main>
         <footer>
-            <a href="https://www.instagram.com/mercadinhobergamini/">
-                <img src="{{ asset('site/img/logoig.png') }}" target="_blank" rel="noopener noreferrer">
+            <a>
+                <img src="{{ asset('site/img/logoig.png') }}" target="_blank" rel="noopener noreferrer"
+                    onclick="openPage('https://www.instagram.com/mercadinhobergamini/')">
                 <p>Instagram</p>
             </a>
-            <a href="https://wa.me/552732581397')">
-                <img src="{{ asset('site/img/logowpp.png') }}" target="_blank" rel="noopener noreferrer">
+            <a>
+                <img src="{{ asset('site/img/logowpp.png') }}" target="_blank" rel="noopener noreferrer"
+                    onclick="openPage('https://wa.me/552732581397')">
                 <p>Whatsapp</p>
             </a>
 
         </footer>
     </div>
-
+    <script src="{{ asset('site/js/script.js') }}"></script>
 </body>
 
 </html>

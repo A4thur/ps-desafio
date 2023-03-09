@@ -1,4 +1,4 @@
-<header id="site-header">
+{{-- <header id="site-header">
     <div id="header-logo">
         <a href="{{ route('siteIndex') }}">
             <img src="{{ asset('site/img/logomercado.jpeg') }}" alt="Logo Mercado">
@@ -20,4 +20,20 @@
     </div>
 
 </header>
-<hr id="hr-header">
+<hr id="hr-header"> --}}
+<header>
+    <nav>
+        <a href="" class="logo">Mercadinho Bergamini</a>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="/"></a>Inicio</li>
+            <li><a onclick="openPage('http://127.0.0.1:8000/sobrenos')">Sobre</a></li>
+            <li><a href="/"></a>Produtos</li>
+
+        </ul>
+    </nav>
+</header>
