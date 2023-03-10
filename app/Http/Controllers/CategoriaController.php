@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use App\Models\Produto;
 
 
 use App\Models\Categoria;

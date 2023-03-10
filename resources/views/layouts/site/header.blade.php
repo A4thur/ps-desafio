@@ -23,7 +23,7 @@
 <hr id="hr-header"> --}}
 <header>
     <nav>
-        <a href="" class="logo">Mercadinho Bergamini</a>
+        <a href="http://127.0.0.1:8000/siteIndex" class="logo">Mercadinho Bergamini</a>
         <div class="mobile-menu">
             <div class="line1"></div>
             <div class="line2"></div>

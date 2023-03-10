@@ -23,9 +23,10 @@ use App\Http\Controllers\SiteController;
 //Rotas para o site
 Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
 Route::get('produtosFiltrados', [SiteController::class, 'produtofiltrado'])->name('produtofiltro');
-Route::get('produtosBuscados', [SiteController::class, 'produtofiltrado'])->name('produtofiltro');
+Route::get('produtosBuscados', [SiteController::class, 'produtobuscado'])->name('produtobusca');
 Route::get('sobrenos', [SiteController::class, 'sobrenos'])->name('sobrenos');
 Route::get('comprarproduto/{id}', [SiteController::class, 'comprarproduto'])->name('compra');
+Route::post('/comprar/{id}', [SiteController::class, 'comprar'])->name('comprar');
 
 Route::middleware('locale')->group(function () {
 

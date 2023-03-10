@@ -14,6 +14,7 @@
 
 .janela_produto div {
     margin: 0 auto;
+    border-radius: 5%;
 }
 
 .foto_produto {
@@ -21,9 +22,9 @@
     grid-column: 2;
     height: 580px;
     width: 690px;
-    background-color: white;
-    border: 10px solid green;
+    border: 12px solid #23232e;
     background-repeat: no-repeat;
+    border-radius: 5%;
 }
 
 .info_produto {
@@ -32,7 +33,7 @@
     grid-column: 10;
     width: 490px;
     height: 580px;
-    background-color: green;
+    background-color: #23232e;
 }
 .preco_produto,
 .nome_produto {
@@ -52,7 +53,7 @@
 .adicionar_carrinho {
     margin: 40px 0 0 25px;
     text-align: center;
-    background-color: green;
+    background-color: #23232e;
     color: white;
     width: 363px;
     height: 70px;
@@ -71,9 +72,9 @@
     justify-content: flex-end;
     width: 1290px;
     height: 450px;
-    border: 5px solid green;
+    border: 5px solid #23232e;
     color: white;
-    background-color: green;
+    background-color: #23232e;
     opacity: 0.95;
     z-index: 0;
     border-radius: 35px;
@@ -94,4 +95,7 @@
 
 button:hover {
     cursor: pointer;
+}
+.baixaproduto {
+    color: white;
 }

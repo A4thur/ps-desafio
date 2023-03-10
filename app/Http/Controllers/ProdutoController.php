@@ -64,7 +64,7 @@ class ProdutoController extends Controller
         $produtos = $this->produto->find($id);
         if ($request->hasFile('imagem')) {
             Storage::disk('public')->delete(substr($produtos->image, 9));
-            $data['imagem'] = '/storage/' . $request->file('imagem')->store('produtos', 'public');
+            $data['imagem'] =  $request->file('imagem')->store('produtos', 'public');
         }
         $produtos->update($data);
         return redirect()->route('produto.index')->with('Sucesso', 'Produto modificado com sucesso');

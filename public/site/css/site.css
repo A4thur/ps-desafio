@@ -58,7 +58,21 @@ nav {
     background: white;
     margin: 8px;
 }
-/*
+.search-filter.spam {
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flex;
+    margin: 1vw;
+    padding: 10px;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vwww;
+    margin-right: 200px;
+}
 .search input {
     display: inline-block;
     max-width: 200px;
@@ -66,7 +80,7 @@ nav {
     height: 30px;
     padding: 0 10px;
     border-radius: 20px 0 0 20px;
-    border: 3px solid yellow;
+    border: 3px solid #766d6d;
     border-right: 0;
 }
 .search {
@@ -85,21 +99,20 @@ nav {
     height: 30px;
     padding: 0 10px;
     border-radius: 0px 20px 20px 0px;
-    border: 3px solid yellow;
+    border: 3px solid #3e3e51;
     border-left: 0;
 }
 .search button:hover {
-    background-color: rgb(255, 255, 0);
+    background-color: #767171ba;
 }
- content css*/
-#categorias {
+content css*/ #categorias {
     font-size: 23px;
 }
 #botao-filtro {
     font-size: 23px;
 }
 #botao-filtro:hover {
-    background-color: rgb(255, 255, 0);
+    background-color: #6d6d7b;
 }
 
 .section-container {
@@ -116,34 +129,55 @@ nav {
 }
 .painel {
     z-index: 0;
-    padding: 2.5%;
+    padding: 1.5%;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 32px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    grid-row-gap: 400px;
+    grid-row-gap: 45vh;
     position: relative;
 }
+.card-conteiner {
+    display: flex;
+}
+
 .card {
     display: flex;
-    border: 2px solid rgb(140, 171, 218);
+    border: none;
     color: black;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 20vw;
     height: 40vh;
     border-radius: 5%;
+    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh rgba(83, 81, 81, 0.501);
+    cursor: pointer;
+}
+.card0 {
+    display: flex;
+    border: none;
+    color: black;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20vw;
+    height: 40vh;
+    border-radius: 5%;
+    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh rgba(83, 81, 81, 0.501);
+    cursor: pointer;
+    opacity: 0.5;
 }
 .card:hover {
-    border: 2px solid rgb(40, 110, 214);
-    cursor: pointer;
+    border: none;
     transform: scale(1.05);
 }
 .imagem-produto {
-    width: 70%;
+    object-fit: scale-down;
+    width: 17vw;
+    height: 27vh;
 }
 .cartao {
     transform-style: preserve-3d;
@@ -155,8 +189,8 @@ nav {
     position: absolute;
     display: flex;
     width: 20vw;
-    height: 35vh;
-    justify-content: center;
+    height: 40vh;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
 }
@@ -170,12 +204,17 @@ nav {
 .flip {
     transform: rotateY(180deg);
 }
-
+.button-compra {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-size: 24px;
+    padding: 5px;
+}
 /* footer css  */
 #site-footer {
     width: 100%;
     height: 100px;
-    background-color: #008f8c;
+    background-color: #23232e;
     display: flex;
     position: absolute;
     bottom: -800px;
@@ -207,6 +246,7 @@ nav {
 
 #texto-footer {
     display: flex;
+    color: white;
 }
 
 /* mediacare */
