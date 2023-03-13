@@ -45,7 +45,7 @@ nav {
 }
 .nav-list li {
     letter-spacing: 3px;
-    margin-left: 32px;
+    /* margin-left: 32px; */
 }
 .mobile-menu {
     z-index: 3;
@@ -58,24 +58,16 @@ nav {
     background: white;
     margin: 8px;
 }
-.search-filter.spam {
-    align-items: center;
-    justify-content: space-around;
-    display: inline-flex;
-    margin: 1vw;
-    padding: 10px;
-}
-
 .search-filter {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 1vwww;
-    margin-right: 200px;
+    width: 100vw;
+    padding: 1vw;
 }
 .search input {
     display: inline-block;
-    max-width: 200px;
     width: 200px;
     height: 30px;
     padding: 0 10px;
@@ -84,11 +76,12 @@ nav {
     border-right: 0;
 }
 .search {
+    right: auto;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
+    width: 250px;
 }
 .search button {
     cursor: pointer;
@@ -103,18 +96,28 @@ nav {
     border-left: 0;
 }
 .search button:hover {
-    background-color: #767171ba;
+    background-color: #23232e;
 }
 content css*/ #categorias {
     font-size: 23px;
 }
+.produtos-container {
+    left: auto;
+}
 #botao-filtro {
     font-size: 23px;
+    border-radius: 20px;
+    padding: 10px;
 }
 #botao-filtro:hover {
     background-color: #6d6d7b;
 }
-
+#titulo-produto {
+    display: flex;
+    font-size: 60px;
+    justify-content: center;
+    align-items: center;
+}
 .section-container {
     position: relative;
     text-align: center;
@@ -144,6 +147,9 @@ content css*/ #categorias {
 }
 
 .card {
+    font-family: "Poppins", sans-serif;
+    font-weight: 1000;
+    font-size: 22px;
     display: flex;
     border: none;
     color: black;
@@ -161,7 +167,7 @@ content css*/ #categorias {
     border: none;
     color: black;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 20vw;
     height: 40vh;
@@ -177,7 +183,7 @@ content css*/ #categorias {
 .imagem-produto {
     object-fit: scale-down;
     width: 17vw;
-    height: 27vh;
+    height: 20vh;
 }
 .cartao {
     transform-style: preserve-3d;
@@ -198,17 +204,21 @@ content css*/ #categorias {
     transform: rotateY(180deg);
 }
 .back {
-    background-color: #bacccc;
+    background-color: #afc7c7;
     backface-visibility: hidden;
 }
 .flip {
     transform: rotateY(180deg);
 }
 .button-compra {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    font-size: 24px;
-    padding: 5px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 10px 25px;
+    background-color: #23232e;
+    text-decoration: none;
+}
+.button-compratext {
+    color: white;
 }
 /* footer css  */
 #site-footer {
@@ -217,7 +227,7 @@ content css*/ #categorias {
     background-color: #23232e;
     display: flex;
     position: absolute;
-    bottom: -800px;
+    bottom: -2100px;
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px 10px 40px;
@@ -275,8 +285,131 @@ content css*/ #categorias {
     .mobile-menu {
         display: block;
     }
+    .painel {
+        z-index: 0;
+        padding: 1.5%;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 32px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        grid-row-gap: 45vh;
+        position: relative;
+    }
+    .face {
+        width: 20vw;
+        height: 40vh;
+    }
+    .card {
+        font-size: 20px;
+        width: 20vw;
+        height: 40vh;
+    }
+    .card0 {
+        width: 20vw;
+        height: 40vh;
+        opacity: 0.5;
+    }
 }
-
+@media (max-width: 600px) {
+    .logo {
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    .painel {
+        grid-template-columns: repeat(2, auto);
+    }
+    .face {
+        position: absolute;
+        display: flex;
+        width: 35vw;
+        height: 40vh;
+    }
+    .card {
+        width: 35vw;
+        height: 40vh;
+    }
+    .card0 {
+        width: 35vw;
+        height: 40vh;
+    }
+    #site-footer {
+        bottom: -4100px;
+    }
+}
+@media (max-width: 445px) {
+    body {
+        overflow-x: hidden;
+    }
+    .logo {
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    .painel {
+        grid-template-columns: repeat(1, auto);
+    }
+    .face {
+        position: absolute;
+        display: flex;
+        width: 40vw;
+        height: 40vh;
+    }
+    .card {
+        width: 40vw;
+        height: 40vh;
+        font-size: 15px;
+    }
+    .card0 {
+        width: 40vw;
+        height: 40vh;
+    }
+    #site-footer {
+        bottom: -9100px;
+    }
+    .search-filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vw;
+    }
+    .search input {
+        display: inline-block;
+        width: 150px;
+        height: 20px;
+        padding: 0 10px;
+        border-radius: 20px 0 0 20px;
+        border: 3px solid #766d6d;
+        border-right: 0;
+    }
+    .search {
+        right: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .search button {
+        cursor: pointer;
+        transition: 0.3s;
+        display: inline-block;
+        background-color: white;
+        width: 15px;
+        height: 20px;
+        padding: 0 8px;
+    }
+    #botao-filtro {
+        font-size: 16px;
+        border-radius: 20px;
+        padding: 5px;
+    }
+    #botao-filtro:hover {
+        background-color: #6d6d7b;
+    }
+}
 .nav-list.active {
     transform: translateX(0);
 }

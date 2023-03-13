@@ -21,7 +21,11 @@
                     @csrf
                     <label class="baixaproduto" for="quantidade">Quantidade:</label>
                     <input type="number" name="quantidade" id="quantidade" value="1">
-                    <button type="submit">Comprar</button>
+                    <button type="submit">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                    </button>
                 </form>
             </div>
             <div class="descricao_produto">
