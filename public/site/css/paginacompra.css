@@ -1,19 +1,34 @@
+:root {
+    --bd-color: #e2ebed;
+    --letter-color: white;
+}
+.dark-mode:root {
+    --bd-color: #212529;
+    --letter-color: #617878;
+}
+.troca-modo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .pagina-produto-parent {
+    background-color: var(--bd-color);
+    justify-content: center;
+    align-items: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .janela_produto {
     position: relative;
     width: 80%;
-    height: 1200px;
     margin: 80px auto;
-    display: grid;
-    grid-template-columns: repeat(12, 100px);
-    grid-template-rows: 580px 580px;
+    display: flex;
     row-gap: 65px;
+    justify-content: space-around;
 }
 
 .janela_produto div {
-    margin: 0 auto;
     border-radius: 5%;
 }
 
@@ -22,12 +37,11 @@
     grid-column: 2;
     height: 580px;
     width: 690px;
-    border: 12px solid #23232e;
-    background-repeat: no-repeat;
     border-radius: 5%;
 }
 
 .info_produto {
+    margin-left: 25px;
     border-radius: 15px;
     padding: 60px 40px;
     grid-column: 10;
@@ -37,7 +51,7 @@
 }
 .preco_produto,
 .nome_produto {
-    color: white;
+    color: var(--letter-color);
     font-size: 36px;
     font-weight: 600;
 }
@@ -46,7 +60,7 @@
     margin-top: 20px;
     font-size: 30px;
     font-weight: 600;
-    color: white;
+    color: var(--letter-color);
     margin-bottom: 43px;
 }
 
@@ -54,7 +68,7 @@
     margin: 40px 0 0 25px;
     text-align: center;
     background-color: #23232e;
-    color: white;
+    color: var(--letter-color);
     width: 363px;
     height: 70px;
     border-radius: 40px;
@@ -66,14 +80,15 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     padding: 30px 31px 20px 28px;
     grid-row: 2;
     grid-column: 2;
-    justify-content: flex-end;
-    width: 1290px;
+    justify-content: center;
+    width: 90vw;
     height: 450px;
     border: 5px solid #23232e;
-    color: white;
+    color: var(--letter-color);
     background-color: #23232e;
     opacity: 0.95;
     z-index: 0;
@@ -82,28 +97,100 @@
 }
 
 .descricao_produto h1 {
-    width: 250px;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .descricao_produto p {
-    margin: 20px 0 auto 40px;
     font-size: 24px;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 button:hover {
     cursor: pointer;
 }
 .baixaproduto {
-    color: white;
+    color: var(--letter-color);
 }
+@media (max-width: 1330px) {
+    .janela_produto {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-list {
+        position: fixed;
+        top: 0vh;
+        right: 0;
+        width: 30vw;
+        height: 100vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+@media (max-width: 740px) {
+    .foto_produto {
+        height: 100%;
+        width: 80vw;
+        border-radius: 5%;
+    }
 
-.material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-    color: var(--lupa);
-    size: 16px;
-    border-radius: 10px;
-    padding: 0.5px;
+    .info_produto {
+        margin-left: 25px;
+        border-radius: 15px;
+        padding: 60px 40px;
+        grid-column: 10;
+        width: 70vw;
+        height: 580px;
+    }
+    .preco_produto,
+    .nome_produto {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .estoque_produto {
+        margin-top: 20px;
+        font-size: 20px;
+
+        margin-bottom: 43px;
+    }
+
+    .adicionar_carrinho {
+        display: flex;
+        margin: 25px;
+        width: 60vw;
+        height: 70px;
+        border-radius: 40px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .descricao_produto {
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        display: flex;
+    }
+    .texto_descricao {
+        text-align: center;
+    }
 }

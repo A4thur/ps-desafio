@@ -52,11 +52,15 @@
                                 <div class="preco-produto">
                                     <p>R${{ $produto['preco'] }}</p>
                                 </div>
-                                <button class="button-compra">
-                                    <a class="button-compratext" href="{{ route('compra', $produto->id) }}">
-                                        Comprar
-                                    </a>
-                                </button>
+                                @if ($produto->quantidade > 0)
+                                    <button class="button-compra">
+                                        <a class="button-compratext" href="{{ route('compra', $produto->id) }}">
+                                            Comprar
+                                        </a>
+                                    </button>
+                                @else
+                                    <p class="esgotado">Esgotado</p>
+                                @endif
                             </div>
                         </div>
                         <div class="face back">
@@ -67,11 +71,13 @@
                                 <div class="quantidade-produto">
                                     <p>Estoque: {{ $produto['quantidade'] }} unidades</p>
                                 </div>
-                                <button class="button-compra">
-                                    <a class="button-compratext" href="{{ route('compra', $produto->id) }}">
-                                        Comprar
-                                    </a>
-                                </button>
+                                @if ($produto->quantidade > 0)
+                                    <button class="button-compra">
+                                        <a class="button-compratext" href="{{ route('compra', $produto->id) }}">
+                                            Comprar
+                                        </a>
+                                    </button>
+                                @endif
                             </div>
                         </div>
                     </div>
