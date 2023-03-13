@@ -1,3 +1,32 @@
+:root {
+    --bd-color: #e2ebed;
+    --letter-color: white;
+    --bd-black: #23232e;
+    --box-shadow: rgba(83, 81, 81, 0.501);
+    --cinza: ;
+    --back-color: #afc7c7;
+    --color-menu: white;
+    --botao-filtro: #698a8a;
+    --buttom-compra: white;
+    --buttom-compra-fundo: #23232e;
+    --letter-color-painel: black;
+    --lupa: #3b444d;
+    --lupa-hover: white;
+}
+.dark-mode:root {
+    --letter-color-painel: #698a8a;
+    --bd-color: #212529;
+    --letter-color: #617878;
+    --bd-black: #23232e;
+    --box-shadow: #61808074;
+    --back-color: #afc7c7;
+    --color-menu: #afc7c7;
+    --botao-filtro: #a7d0d0;
+    --buttom-compra: #698a8a;
+    --buttom-compra-fundo: rgba(108, 80, 80, 0.267);
+    --lupa: #a7d0d0;
+    --lupa--hover: white;
+}
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +41,13 @@
 body {
     font-family: "Gill Sans", sans-serif;
     font-size: 20px;
-    background-color: #e2ebed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bd-color);
 }
 /* header css */
 header a {
-    color: white;
+    color: var(--letter-color);
     text-decoration: none;
     transition: 0.3s;
 }
@@ -30,12 +61,12 @@ header a:hover {
 }
 nav {
     z-index: 1;
-    color: white;
+    color: var(--letter-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: Helvetica, Arial, sans-serif;
-    background: #23232e;
+    background: var(--bd-black);
     height: 8vh;
 }
 .nav-list {
@@ -45,7 +76,7 @@ nav {
 }
 .nav-list li {
     letter-spacing: 3px;
-    /* margin-left: 32px; */
+    margin-left: 32px;
 }
 .mobile-menu {
     z-index: 3;
@@ -55,27 +86,46 @@ nav {
 .mobile-menu div {
     width: 32px;
     height: 2px;
-    background: white;
+    background: var(--color-menu);
     margin: 8px;
 }
+.selecione {
+    color: var(--botao-filtro);
+    background-color: var(--buttom-compra);
+}
+.search input {
+    color: var(--botao-filtro);
+}
+.section-container label {
+    color: var(--letter-color-painel);
+}
+.select-container input {
+    background-color: var(--buttom-compra);
+    color: var(--botao-filtro);
+}
+
 .search-filter {
+    color: var(--letter-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
     width: 100vw;
     padding: 1vw;
 }
 .search input {
+    color: var(--letter-color);
+    background-color: var(--buttom-compra);
     display: inline-block;
     width: 200px;
     height: 30px;
     padding: 0 10px;
     border-radius: 20px 0 0 20px;
-    border: 3px solid #766d6d;
+    border: 3px solid var(--bd-black);
     border-right: 0;
 }
 .search {
+    color: var(--letter-color);
     right: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -84,41 +134,44 @@ nav {
     width: 250px;
 }
 .search button {
+    color: var(--letter-color);
     cursor: pointer;
     transition: 0.3s;
     display: inline-block;
-    background-color: white;
+    background-color: var(--buttom-compra);
     width: 40px;
     height: 30px;
     padding: 0 10px;
     border-radius: 0px 20px 20px 0px;
-    border: 3px solid #3e3e51;
+    border: 3px solid var(--bd-black);
     border-left: 0;
 }
 .search button:hover {
-    background-color: #23232e;
-}
-content css*/ #categorias {
-    font-size: 23px;
+    background-color: var(--bd-black);
+    color: var(--lupa--hover);
 }
 .produtos-container {
     left: auto;
 }
 #botao-filtro {
+    color: var(--botao-filtro);
     font-size: 23px;
     border-radius: 20px;
     padding: 10px;
 }
 #botao-filtro:hover {
-    background-color: #6d6d7b;
+    color: var(--letter-color);
+    background-color: var(--bd-black);
 }
 #titulo-produto {
+    color: var(--letter-color-painel);
     display: flex;
     font-size: 60px;
     justify-content: center;
     align-items: center;
 }
 .section-container {
+    color: var(--letter-color-painel);
     position: relative;
     text-align: center;
     padding: 1%;
@@ -144,6 +197,7 @@ content css*/ #categorias {
 }
 .card-conteiner {
     display: flex;
+    color: var(--botao-filtro);
 }
 
 .card {
@@ -152,27 +206,25 @@ content css*/ #categorias {
     font-size: 22px;
     display: flex;
     border: none;
-    color: black;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 20vw;
     height: 40vh;
     border-radius: 5%;
-    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh rgba(83, 81, 81, 0.501);
+    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh var(--box-shadow);
     cursor: pointer;
 }
 .card0 {
     display: flex;
     border: none;
-    color: black;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 20vw;
     height: 40vh;
     border-radius: 5%;
-    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh rgba(83, 81, 81, 0.501);
+    box-shadow: 0.9vh 0.9vh 0.9vh 0.9vh var(--box-shadow);
     cursor: pointer;
     opacity: 0.5;
 }
@@ -204,7 +256,7 @@ content css*/ #categorias {
     transform: rotateY(180deg);
 }
 .back {
-    background-color: #afc7c7;
+    background-color: var(--back-color);
     backface-visibility: hidden;
 }
 .flip {
@@ -214,20 +266,20 @@ content css*/ #categorias {
     border-radius: 25px;
     font-size: 20px;
     padding: 10px 25px;
-    background-color: #23232e;
+    background-color: var(--buttom-compra-fundo);
     text-decoration: none;
 }
 .button-compratext {
-    color: white;
+    color: var(--buttom-compra);
 }
 /* footer css  */
 #site-footer {
     width: 100%;
     height: 100px;
-    background-color: #23232e;
+    background-color: var(--bd-black);
     display: flex;
     position: absolute;
-    bottom: -2100px;
+    bottom: -2500px;
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px 10px 40px;
@@ -256,7 +308,7 @@ content css*/ #categorias {
 
 #texto-footer {
     display: flex;
-    color: white;
+    color: var(--letter-color);
 }
 
 /* mediacare */
@@ -340,9 +392,6 @@ content css*/ #categorias {
     }
 }
 @media (max-width: 445px) {
-    body {
-        overflow-x: hidden;
-    }
     .logo {
         font-size: 16px;
         text-transform: uppercase;
@@ -413,7 +462,8 @@ content css*/ #categorias {
 .nav-list.active {
     transform: translateX(0);
 }
-
+@media (max-width: 320px) {
+}
 @keyframes navLinkFade {
     from {
         opacity: 0;

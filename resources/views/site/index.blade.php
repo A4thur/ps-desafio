@@ -24,6 +24,9 @@
                     </form>
                 </div>
             </div>
+            <label for="switch">
+                <input type="checkbox" id="switch">Dark Mode
+            </label>
             <div class="search">
                 <form class="search" action="{{ route('produtobusca') }}">
                     <input type="text id="search" name=" search">
