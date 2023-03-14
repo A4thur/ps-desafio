@@ -31,7 +31,7 @@
                 <form class="search" action="{{ route('produtobusca') }}">
                     <input type="text id="search" name=" search">
                     <button type="submit">
-                        <span class="material-symbols-outlined">search</span>
+                        <span class="material-symbols-outlined lupa">search</span>
                     </button>
                 </form>
             </div>
