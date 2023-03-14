@@ -22,7 +22,7 @@
                 <hr />
                 <p class="estoque_produto">Estoque:{{ $produto['quantidade'] }} unidades</p>
                 <p class="estoque_produto">Qual quantidade deseja comprar?</p>
-                <form method="POST" action="{{ route('comprar', ['id' => $produto->id]) }}">
+                <form id="form-quantidade" method="POST" action="{{ route('comprar', ['id' => $produto->id]) }}">
                     @csrf
                     <label class="baixaproduto" for="quantidade">Quantidade:</label>
                     <input type="number" name="quantidade" id="quantidade" value="1">

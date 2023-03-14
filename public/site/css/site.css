@@ -138,6 +138,16 @@ nav {
     justify-content: flex-start;
     width: 250px;
 }
+#quantidade {
+    height: 24px;
+}
+
+#form-quantidade {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
 .search button {
     color: var(--letter-color);
     cursor: pointer;
@@ -446,6 +456,11 @@ nav {
     }
 }
 @media (max-width: 445px) {
+    #quantidade {
+        display: flex;
+        width: 100px;
+        flex-wrap: wrap;
+    }
     .nav-list li {
         font-size: 15px;
     }
