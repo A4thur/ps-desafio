@@ -25,7 +25,7 @@
                 </div>
             </div>
             <label for="switch">
-                <input type="checkbox" id="switch">Dark Mode
+                <input type="checkbox" id="switch"> Dark Mode
             </label>
             <div class="search">
                 <form class="search" action="{{ route('produtobusca') }}">
@@ -35,6 +35,9 @@
                     </button>
                 </form>
             </div>
+            <a class="button-compra" onclick="openPage('http://127.0.0.1:8000/dashboard')">
+                Admin
+            </a>
         </div>
         <h1 id="titulo-produtos">Produtos</h1>
         <div class="painel">

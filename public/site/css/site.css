@@ -165,10 +165,11 @@ nav {
     color: var(--letter-color);
     background-color: var(--bd-black);
 }
-#titulo-produto {
+#titulo-produtos {
     color: var(--letter-color-painel);
     display: flex;
-    font-size: 60px;
+    font-size: 50px;
+    margin: 25px 0;
     justify-content: center;
     align-items: center;
 }
@@ -177,6 +178,8 @@ nav {
     position: relative;
     text-align: center;
     padding: 1%;
+    margin-bottom: 50px;
+    min-height: 100vh;
 }
 .produtos-container {
     display: flex;
@@ -194,11 +197,14 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    grid-row-gap: 45vh;
+    /* grid-row-gap: 45vh; */
     position: relative;
+    min-height: 100vh;
+    height: 100%;
 }
-.card-conteiner {
+.card-container {
     display: flex;
+    height: 400px;
     color: var(--botao-filtro);
 }
 
@@ -283,8 +289,7 @@ nav {
     width: 100%;
     background-color: var(--bd-black);
     display: flex;
-    position: absolute;
-    bottom: -2500px;
+    margin-top: auto;
     align-items: center;
     justify-content: space-between;
     padding: 10px 40px 10px 40px;
@@ -316,11 +321,32 @@ nav {
 }
 
 /* mediacare */
+@media (max-width: 1330px) {
+    .card-container {
+        height: 325px;
+    }
+
+    .button-compra {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+    .button-compratext {
+        font-size: 20px;
+    }
+    .logos-footer {
+        padding: 10px;
+    }
+    #footer-container {
+        display: flex;
+        width: 40%;
+    }
+}
 
 @media (max-width: 999px) {
     body {
         overflow-x: hidden;
     }
+
     .nav-list {
         position: fixed;
         top: 0vh;
@@ -346,11 +372,9 @@ nav {
         padding: 1.5%;
         display: grid;
         grid-template-columns: repeat(3, auto);
-        grid-gap: 32px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        grid-row-gap: 45vh;
         position: relative;
     }
     .face {
@@ -358,17 +382,24 @@ nav {
         height: 40vh;
     }
     .card {
-        font-size: 20px;
+        font-size: 18px;
         width: 20vw;
         height: 40vh;
     }
     .card0 {
+        font-size: 18px;
         width: 20vw;
         height: 40vh;
         opacity: 0.5;
     }
+    .button-compra {
+        padding: 7px 10px;
+    }
 }
 @media (max-width: 600px) {
+    .search-filter {
+        gap: 15px;
+    }
     .logo {
         font-size: 20px;
         text-transform: uppercase;
@@ -395,10 +426,30 @@ nav {
         bottom: -4100px;
     }
     #site-footer {
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+    #card-container {
+        width: 100%;
+    }
+    #texto-footer {
+        font-size: 20px;
+        text-align: center;
+    }
+    #footer-container img {
+        width: 100%;
     }
 }
 @media (max-width: 445px) {
+    .nav-list li {
+        font-size: 15px;
+    }
+    .card-container {
+        height: 250px;
+    }
+
     .imagem-produto {
         height: 100%;
     }
@@ -422,11 +473,6 @@ nav {
         justify-content: center;
         margin-bottom: 10px;
     }
-    #footer-container img {
-        width: 50%;
-        height: 50%;
-        margin-bottom: 10px;
-    }
     .logo {
         font-size: 16px;
         text-transform: uppercase;
@@ -445,18 +491,14 @@ nav {
         height: 40vh;
     }
     .card {
-        width: 40vw;
-        height: 40vh;
+        width: 50vw;
         font-size: 15px;
     }
     .card0 {
-        width: 40vw;
-        height: 40vh;
+        width: 50vw;
         font-size: 15px;
     }
     #site-footer {
-        bottom: -7100px;
-        max-height: 350px;
         padding: 10px 15px 10px 15px;
         justify-content: space-around;
     }
@@ -505,6 +547,11 @@ nav {
     }
     #botao-filtro:hover {
         background-color: #6d6d7b;
+    }
+    .info_produtos form {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 }
 .nav-list.active {

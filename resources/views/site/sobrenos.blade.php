@@ -14,7 +14,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="">Sobre-nós</a>
+                    <a href="">Sobre nós</a>
                 </li>
                 <li>
                     <a href="http://127.0.0.1:8000/siteIndex">Home</a>
@@ -26,14 +26,14 @@
         </nav>
         <header>
             <div class="center">
-                <img src="{{ asset('site/img/logomercado.jpeg') }}" alt="Logo Mercado">
+                <img src="{{ asset('site/img/fotomercado.jpeg') }}" alt="Logo Mercado">
             </div>
             <h1>Mercadinho Bergamini</h1>
             <h2>Mercado, Padaria e Hortifrutti</h2>
         </header>
         <main>
             <section>
-                <h3>Sobre-nós</h3>
+                <h3>Sobre nós</h3>
                 <p>
                     Somos um mercado com uma variedade de produtos hortifrutigranjeiros com um leque de opções com
                     produtos diversos. Aqui você sempre encontra produtos selecionados, fresquinhos com muita dedicação

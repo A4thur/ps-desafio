@@ -61,3 +61,25 @@ footer p {
 nav a:hover {
     color: #5bbe42;
 }
+@media (max-width: 400px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    main p {
+        font-size: 15px;
+    }
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        align-items: center;
+        padding: 5px;
+        width: 100%;
+    }
+}
