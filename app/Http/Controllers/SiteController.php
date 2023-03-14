@@ -45,7 +45,7 @@ class SiteController extends Controller
     {
         $produto = Produto::find($id);
         $quantidade = $request->quantidade;
-        if (($produto->quantidade >= $quantidade) and ($quantidade > 0)) {
+        if (($produto->quantidade >= $quantidade) && ($quantidade > 0)) {
             $produto->quantidade -= $quantidade;
             $produto->save();
             return redirect()->back()->with('success', 'Produto comprado com sucesso!');
